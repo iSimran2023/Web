@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Grid,
   Box,
@@ -8,15 +8,10 @@ import {
   List,
   ListItem,
   ListItemText,
-  useTheme,
-  useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // True if screen is small
-  const [drawerOpen, setDrawerOpen] = useState(false); // Controls mobile drawer visibility
 
   return (
     <>
