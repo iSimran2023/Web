@@ -213,17 +213,7 @@ const Navbar = () => {
       "&:hover": { color: "#F58D4C" },
     }}>Contact us</Box>
 
-    {/* Login Link */}
-    <Box component="a" href="#" sx={{
-      color: "white",
-      textDecoration: "none",
-      fontSize: "1.05rem",
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-      flexShrink: 0,
-      marginLeft: 'auto',
-      pl: 2,
-      "&:hover": { color: "#F58D4C" },
-    }}>Login</Box>
+    
   </Box>
 </Box>
     </>
