@@ -4,6 +4,7 @@ import {
   useMediaQuery, useTheme
 } from "@mui/material";
 import { Menu, Close, ExpandMore, ExpandLess } from "@mui/icons-material";
+import PersonIcon from '@mui/icons-material/Person';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -34,7 +35,7 @@ const Navbar = () => {
     { name: "Curriculum" },
     { name: "Gallery" },
     { name: "Contact us" },
-    { name: "Login", alignRight: true }
+    { name: "Login", alignRight: true, icon: <PersonIcon fontSize="small" /> }
   ];
 
   const toggleMenu = (menuKey) => {
@@ -50,7 +51,7 @@ const Navbar = () => {
       key={item.name}
       sx={{ 
         position: 'relative',
-        mr: 4, // Consistent spacing between items
+        mr: 4,
         ml: 0
       }}
     >
@@ -83,11 +84,11 @@ const Navbar = () => {
             <Box sx={{
               position: 'absolute',
               top: '100%',
-              left: 0,
+              right: -5,
               backgroundColor: 'rgb(17, 105, 191)',
               boxShadow: '0px 4px 5px rgba(0,0,0,0.2)',
               zIndex: 1,
-              minWidth: '180px',
+              minWidth: '100px',
               ...fontStyle
             }}>
               {item.subItems.map((subItem) => (
@@ -124,10 +125,14 @@ const Navbar = () => {
             textDecoration: "none",
             whiteSpace: "nowrap",
             fontSize: "0.95rem",
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
             "&:hover": { color: "#F58D4C" },
             ...fontStyle
           }}
         >
+          {item.icon && item.icon}
           {item.name}
         </Box>
       )}
@@ -219,7 +224,7 @@ const Navbar = () => {
             {/* Right-aligned items with extra spacing */}
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {navItems.filter(item => item.alignRight).map(item => (
-                <Box key={item.name} sx={{ ml: 8 }}> {/* Increased left margin for extra space */}
+                <Box key={item.name} sx={{ ml: 8 }}>
                   {renderNavItem(item)}
                 </Box>
               ))}
@@ -255,6 +260,11 @@ const Navbar = () => {
                       ...fontStyle
                     }}
                   >
+                    {item.icon && (
+                      <Box sx={{ display: 'flex', mr: 1 }}>
+                        {item.icon}
+                      </Box>
+                    )}
                     <ListItemText 
                       primary={item.name} 
                       primaryTypographyProps={{...fontStyle, fontSize: "0.95rem"}} 
