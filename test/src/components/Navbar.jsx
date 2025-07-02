@@ -27,7 +27,7 @@ const Navbar = () => {
     { href: "/downloads", label: "Downloads" },
     { href: "/curriculum", label: "Curriculum" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/contact-us", label: "Contact Us" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   useEffect(() => {
@@ -93,21 +93,21 @@ const Navbar = () => {
         />
 
         {/* Campus Information */}
-        <Box sx={{ color: "#024282", flex: 1 }}>
-          <Typography variant="body2">
+        <Box sx={{ color: "#024282" }}>
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>
             त्रिभुवन विश्वविद्यालयबाट सम्बन्धन प्राप्त
           </Typography>
-          <Typography variant="body2">
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>
             Affiliated to Tribhuwan University
           </Typography>
-          <Typography variant="h6" fontWeight="bold">
-            नेपालगञ्ज बहुमुखी क्याम्पस
+          <Typography variant="h6" fontWeight="bold" sx={{ mb: "-4px" }}>
+            टेस्ट बहुमुखी क्याम्पस
           </Typography>
-          <Typography variant="h6" fontWeight="bold">
-            NEPALGUNJ MULTIPLE CAMPUS
+          <Typography variant="h6" fontWeight="bold" sx={{ mb: "-4px" }}>
+            TEST MULTIPLE CAMPUS
           </Typography>
-          <Typography variant="body2">नेपालगञ्ज, बाँके</Typography>
-          <Typography variant="body2">Nepalgunj, Banke</Typography>
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>टेस्ट, नेपाल</Typography>
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>Test, Nepal</Typography>
         </Box>
 
         {/* National Flag (hidden on mobile) */}
@@ -117,7 +117,7 @@ const Navbar = () => {
           alt="Flag"
           sx={{
             display: { xs: "none", md: "block" }, // Hidden on mobile
-            width: 130,
+            width: 120,
             height: 130,
             mr: "100px", // Right margin on desktop
           }}
@@ -273,27 +273,30 @@ const Navbar = () => {
           </Box>
 
           {/* Regular Navigation Links */}
-          {[
-            "Programs",
-            "Reports",
-            "News and Events",
-            "Downloads",
-            "Curriculum",
-            "Gallery",
-            "Contact us",
-          ].map((label) => (
+          {navLinks.map((link, index) => (
             <Box
-              key={label}
+              key={index}
+              component="li"
               sx={{
+                listStyle: "none",
                 color: "white",
-                cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
+                gap: 4,
+                cursor: "pointer",
                 fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
                 "&:hover": { color: "rgb(243, 103, 16)" },
               }}
             >
-              {label}
+              <Link
+                to={link.href}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                {link.label}
+              </Link>
             </Box>
           ))}
 
@@ -308,7 +311,7 @@ const Navbar = () => {
               fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
               ml: { md: "auto" }, // Push to right on desktop
               mr: { md: "100px" }, // Right margin on desktop
-              "&:hover": { color: "rgb(243, 103, 16)" },
+              "&:hover": { color: "rgb(55 65 81)" },
             }}
           >
             <IoPerson fontSize="small" />
