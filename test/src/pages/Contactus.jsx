@@ -9,6 +9,7 @@ import {
   TextField,
 } from "@mui/material";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Contactus = () => {
   return (
@@ -123,6 +124,7 @@ const Contactus = () => {
           </Box>
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 };

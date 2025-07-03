@@ -106,8 +106,12 @@ const Navbar = () => {
           <Typography variant="h6" fontWeight="bold" sx={{ mb: "-4px" }}>
             TEST MULTIPLE CAMPUS
           </Typography>
-          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>टेस्ट, नेपाल</Typography>
-          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>Test, Nepal</Typography>
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>
+            टेस्ट, नेपाल
+          </Typography>
+          <Typography sx={{ mb: "-3px", fontSize: "12px" }}>
+            Test, Nepal
+          </Typography>
         </Box>
 
         {/* National Flag (hidden on mobile) */}
@@ -168,19 +172,21 @@ const Navbar = () => {
           }}
         >
           {/* Home Link */}
-          <Box
-            sx={{
-              color: "white",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-              "&:hover": { color: "rgb(243, 103, 16)" }, // Orange on hover
-              ml: { md: "100px" }, // Left margin on desktop
-            }}
-          >
-            Home
-          </Box>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Box
+              sx={{
+                color: "white",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+                "&:hover": { color: "rgb(243, 103, 16)" },
+                ml: { md: "100px" },
+              }}
+            >
+              Home
+            </Box>
+          </Link>
 
           {/* About Us Dropdown */}
           <Box sx={{ position: "relative" }}>
